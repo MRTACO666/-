@@ -122,3 +122,29 @@ end)
 -- Initial setup
 updateScoreLabel()
 updateUpgradeButtons()
+
+-- Create a ScreenGui to hold the UI elements
+local gui = Instance.new("ScreenGui")
+gui.Name = "GameUI"
+gui.Parent = game.Players.LocalPlayer.PlayerGui
+
+-- Create a Frame to hold the UI elements
+local frame = Instance.new("Frame")
+frame.Name = "MainFrame"
+frame.Size = UDim2.new(0.3, 0, 0.5, 0) -- Increased height to accommodate the extra button
+frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+frame.AnchorPoint = Vector2.new(0.5, 0.5)
+frame.BackgroundTransparency = 0.5
+frame.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+frame.Parent = gui
+
+-- Create a TextLabel to display the score
+local scoreLabel = Instance.new("TextLabel")
+scoreLabel.Name = "CoinsLabel"
+scoreLabel.Size = UDim2.new(0.8, 0, 0.1, 0)
+scoreLabel.Position = UDim2.new(0.1, 0, 0.05, 0) -- Adjusted position
+scoreLabel.BackgroundTransparency = 1
+scoreLabel.TextColor3 = Color3.new(1, 1, 1)
+scoreLabel.TextScaled = true
+scoreLabel.Text = "Coins: 0"
+scoreLabel.Parent = frame
